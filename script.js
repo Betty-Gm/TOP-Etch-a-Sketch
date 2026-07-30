@@ -1,16 +1,16 @@
 // To create new grid on button click
 const resetBtn= document.getElementById("reset-grid-btn");
 resetBtn.addEventListener("click",()=>{
-    let newSize= prompt("Enter number of squares per side (Max 100): ");
-    newSize= Number(newSize);
+    let squareSize= prompt("Enter number of squares per side (Max 100): ");
+    squareSize= Number(squareSize);
 
-    if(newSize<1 || newSize>100){
+    if(squareSize<1 || squareSize>100){
         alert("Please ente a valid number between 1 and 100");
         return;
     }
     else{
         container.textContent="";
-        createGrid(newSize);
+        createGrid(squareSize);
     }
 })
 
@@ -27,7 +27,12 @@ function createGrid(size){
         square.style.width= `${newSize}px`;
 
         square.addEventListener("mouseover",()=>{
-            square.classList.add("hovered");
+
+            let r= Math.floor(Math.random()*256);
+            let g= Math.floor(Math.random()*256);
+            let b= Math.floor(Math.random()*256);
+            
+            square.style.backgroundColor= (`rgb(${r}, ${g}, ${b})`);
 
         });
 
