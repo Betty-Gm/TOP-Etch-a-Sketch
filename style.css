@@ -6,10 +6,9 @@
     height: 960px;
 }
 .container div{
-    border: 2px solid gray;
+    border: 1px solid gray;
     box-sizing: border-box;
-    height: 60px;
-    width: 60px;
+  
 }
 .hovered{
     background-color: antiquewhite;
